@@ -1,0 +1,620 @@
+/* Reset e General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #0a0a0a;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+    font-family: "Times New Roman", Times, serif;
+}
+.header h1{
+    position: center left;
+    color: #a7842f;
+    font-size: 25px;
+}
+.header p{
+    position: auto;
+    color: white;
+    font-size: 19px;
+
+}
+.background-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeCarousel 15s infinite;
+}
+
+@keyframes fadeCarousel {
+    0% { opacity: 1; }
+    33%, 66% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.background-carousel img:nth-child(1) { animation-delay: 0s; }
+.background-carousel img:nth-child(2) { animation-delay: 5s; }
+.background-carousel img:nth-child(3) { animation-delay: 10s; }
+
+
+
+/* Estilização do Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* Menu do Navbar */
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.navbar-menu li a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.navbar-menu li a:hover {
+    color: #fff;
+}
+
+/* Botão de Reserva no canto superior direito */
+.btn-reserva {
+    position: absolute;
+    right: 30px; /* Ajuste para afastar o botão da borda */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente dentro da navbar */
+    border: 2px solid goldenrod;
+    background-color: transparent;
+    color: goldenrod;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-reserva:hover {
+    background-color: goldenrod;
+    color: #000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .btn-reserva {
+        position: static;
+        margin-top: 10px;
+        align-self: center;
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Nossa Experiência */
+.nossa-experiencia {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('7.jpeg') repeat center center;
+    background-size: cover;
+    padding: 20px;
+}
+
+.nossa-experiencia h2{
+
+        font: size 20px;
+        color: goldenrod;
+        margin: 15px 0;
+        font-family: "Times New Roman", Times, serif;
+        
+    }
+.nossa-experiencia p{
+    
+        font-size: 18px;
+    
+        font-family: "Times New Roman", Times, serif;
+    }
+
+
+.nossa-experiencia .overlay {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.experiencia-title {
+    font-size: 2.5rem;
+    color: goldenrod;
+}
+
+.experiencia-text {
+    margin-top: 20px;
+    text-align: center;
+}
+.logo-slider {
+    display: flex;
+    gap: 40px; /* Espaço entre os logos */
+    overflow: hidden; /* Oculta os logos que saem do contêiner */
+    position: relative; /* Necessário para controlar o deslizamento */
+    animation: slideLogos 5s linear infinite; /* Animação linear contínua */
+}
+
+.logo-slider .logos-container {
+    display: flex;
+    gap: 40px; /* Espaço entre os logos */
+}
+
+@keyframes slideLogos {
+    0% {
+        transform: translateX(0); /* Começa no início */
+    }
+    100% {
+        transform: translateX(-100%); /* Move todo o bloco para a esquerda */
+    }
+}
+
+
+
+
+.logo-slider img {
+    width: 100px;
+    height: auto;
+}
+
+@keyframes slideLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Seção Sobre Nós Responsiva */
+.about-section {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.about-section h2 {
+    font-size: 2.2em;
+    color: goldenrod;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #ddd;
+    font-size: 1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-images img {
+    width: 100%;
+    max-width: 250px; /* Define a largura máxima */
+    height: auto;
+    object-fit: cover; /* Garante que a imagem se ajuste mantendo a proporção */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid goldenrod;
+}
+
+/* Efeito de Zoom ao passar o mouse */
+.about-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .about-images img {
+        max-width: 180px;
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 480px) {
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-images img {
+        max-width: 90%;
+    }
+}
+
+
+/* Seção Profissionais Qualificados */
+.qualificados-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.98), rgba(184, 134, 11, 0.5));
+    font-family: "Times New Roman", Times, serif;
+}
+
+.qualificados-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.qualificados-text {
+    background: linear-gradient(135deg, #a7842f, #b8860b);
+    color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    
+}
+
+.qualificados-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.qualificados-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.qualificados-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.qualificados-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .qualificados-content {
+        flex-direction: column;
+    }
+
+    .qualificados-image img {
+        max-width: 90%;
+    }
+}
+
+
+/* Formulário */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+    gap: 40px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.info-section, .form-section {
+    flex: 1;
+    max-width: 500px;
+    background: linear-gradient(135deg, #0a0a0a, #b8860b);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.form-section form label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.form-section form input,
+.form-section form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-section button {
+    margin-top: 20px;
+    background: goldenrod;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.form-section button:hover {
+    background: #b8860b;
+}
+
+/* Rodapé */
+.footer-section {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.98), rgba(184, 134, 11, 0.5));
+    color: #f1c232; /* Cor dourada para texto */
+    padding: 40px 0;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif; /* Fonte Times New Roman */
+}
+
+
+
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif; /* Fonte Times New Roman */
+}
+
+.footer-logo-image {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer-menu, .footer-contacts, .footer-social {
+    flex: 1;
+    min-width: 150px;
+    text-align: left;
+}
+
+.footer-menu h4, .footer-contacts h4, .footer-social h4 {
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif; /* Fonte Times New Roman */
+    margin-bottom: 15px;
+    color: #f1c232; /* Cor dourada para títulos */
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+
+.footer-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: #f1c232; /* Dourado ao passar o mouse */
+}
+
+.footer-contacts p {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-social a {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f1c232; /* Dourado ao passar o mouse */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .logo-slider {
+        gap: 20px;
+    }
+}
+
+
+
+
+/* Seção de Serviços Responsiva */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.services-section h2 {
+    font-size: 2em;
+    color: goldenrod;
+    margin-bottom: 30px;
+}
+
+.service-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service-card {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Ajuste de largura máxima para melhor responsividade */
+    padding: 20px;
+    background-color: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 2.5em;
+    color: goldenrod;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-card h3 {
+    font-size: 1.4em;
+    color: goldenrod;
+    margin: 15px 0;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.service-card p {
+    color: grey;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Reflexo espelhado dourado ajustado */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.4s ease;
+    pointer-events: none;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+/* Efeito de zoom e sombra */
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsividade para tablets e dispositivos móveis */
+@media (max-width: 768px) {
+    .service-card-container {
+        gap: 20px;
+    }
+
+    .service-card {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
